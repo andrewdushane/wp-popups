@@ -1,3 +1,9 @@
+<style>
+    .form-field input, input.regular-text {
+        width: 6em;
+    }
+</style>
+
 <div class="wrap">
 	
 	<div id="icon-options-general" class="icon32"></div>
@@ -25,7 +31,12 @@
 											</select>
 										</td>
 									</tr>
-									<tr>
+                                    <tr>
+										<td><label for="popup_delay">Hide popup for:</label></td>
+										<td><input name="popup_delay" id="popup_delay" type="text" value="<?php echo $popup_delay; ?>" class="regular-text" /> days</td>
+										<td>Default: 7 days</td>
+									</tr>									
+                                    <tr>
 										<td><label for="popup_background">Background color:</label></td>
 										<td>#<input name="popup_background" id="popup_background" type="text" value="<?php echo $popup_background; ?>" class="regular-text" /></td>
 										<td>Default: #FFFFFF (white)</td>

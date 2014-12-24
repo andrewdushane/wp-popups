@@ -30,9 +30,14 @@ function premier_popup_content() {
  */
 function premier_popups_scripts() {
 	if ( is_home() ) { //Only proceed on the homepage
-		$cookie = get_bloginfo('name');
+        $popup_options = get_option('premier_popups');
+        $popup_delay = $popup_options['popup_delay'];
+        if( !(is_int($popup_delay)) ) {
+            $popup_delay = 7;
+        }
+        $cookie = get_bloginfo('name');
 		if( !isset($_COOKIE['premier-popups']) || $_COOKIE['premier-popups'] != $cookie) { //Only proceed if no cookie is set for this site
-			setcookie('premier-popups', $cookie, time() + (86400 * 3) ); //Set cookie to expire in 3 days
+			setcookie('premier-popups', $cookie, time() + (86400 * $popup_delay) ); //Set cookie expiration
 			wp_register_style( 'premier-popups', plugins_url( 'premier-popups/includes/style.css') );
 			wp_enqueue_style( 'premier-popups' );
 			wp_enqueue_script('premier-popups', plugins_url( 'premier-popups/includes/pop.js'), array( 'jquery', 'jquery-effects-core' ), '1.0', true);

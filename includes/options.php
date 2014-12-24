@@ -26,19 +26,23 @@ if( is_admin() ) {
 		if( $_POST['premier_popups_options_submitted'] ) {
 			$popup_options['popup_ID']			= esc_html($_POST['select_popup']);
 			$popup_options['popup_background']  = esc_html($_POST['popup_background']);
-			$popup_options['popup_color'] 		= esc_html($_POST['popup_color']);
+			$popup_options['popup_color'] 		= esc_html($_POST['popup_color']);                    
+            if( $_POST['popup_delay'] && $_POST['popup_delay'] != '' ) { 
+                $popup_options['popup_delay']   = intval(esc_html($_POST['popup_delay']));
+            }
 			update_option('premier_popups', $popup_options);
 		}
 		
 		/**
 		 * Retrieve options from the options table
 		 */
-		$popups_options = get_option('premier_popups');
+		$popup_options = get_option('premier_popups');
 		global $popup_ID;
-		if( $popups_options != '' ) {
-			$popup_ID		  = $popups_options['popup_ID'];
-			$popup_background = $popups_options['popup_background'];
-			$popup_color	  = $popups_options['popup_color'];
+		if( $popup_options != '' ) {
+			$popup_ID		  = $popup_options['popup_ID'];
+			$popup_background = $popup_options['popup_background'];
+			$popup_color	  = $popup_options['popup_color'];
+            $popup_delay      = $popup_options['popup_delay'];
 		}
 		
 		/**

@@ -61,6 +61,11 @@
 										<td><input name="popup_height" id="popup_height" type="text" value="<?php echo $popup_height; ?>" class="regular-text" />px</td>
 										<td>Default: 300px</td>
 									</tr>
+									<tr>
+										<td><label for="popup_height">Padding:</label></td>
+										<td><input name="popup_padding" id="popup_padding" type="text" value="<?php echo $popup_padding; ?>" class="regular-text" />px</td>
+										<td>Default: 10px</td>
+									</tr>
 								</table>
 								<p><input class="button-primary" type="submit" name="Submit" value="Submit" /></p>
 							</form>

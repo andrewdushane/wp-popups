@@ -22,6 +22,7 @@ function premier_popup_content() {
 		$popup_color	  = $popup_options['popup_color'];
         $popup_width	  = $popup_options['popup_width'];
 		$popup_height	  = $popup_options['popup_height'];
+		$popup_padding	  = $popup_options['popup_padding'];
 		$popup_mobile     = $popup_options['popup_mobile'];
 		if ($popup_mobile) {
 			$popup_hide = '';

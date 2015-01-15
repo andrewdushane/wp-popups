@@ -37,6 +37,9 @@ if( is_admin() ) {
 			if ( $_POST['popup_height'] != '') {
 				$popup_options['popup_height'] 	= intval(esc_html($_POST['popup_height']));       
 			} else $popup_options['popup_height'] = '';
+			if ( $_POST['popup_padding'] != '') {
+				$popup_options['popup_padding'] = esc_html($_POST['popup_padding']);       
+			} else $popup_options['popup_padding'] = '';
             if( $_POST['popup_delay'] && $_POST['popup_delay'] != '' ) { 
                 $popup_options['popup_delay']   = intval(esc_html($_POST['popup_delay']));
             }
@@ -56,6 +59,7 @@ if( is_admin() ) {
 			$popup_color	  = $popup_options['popup_color'];
             $popup_width	  = $popup_options['popup_width'];
 			$popup_height	  = $popup_options['popup_height'];
+			$popup_padding	  = $popup_options['popup_padding'];
 		}
 		
 		if($popup_mobile) {

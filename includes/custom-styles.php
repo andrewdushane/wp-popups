@@ -4,15 +4,15 @@
 	div.popup-inner {
 		background: #<?php echo $popup_background; ?>;
 	}
-<?php } ?>
+<?php }
 
-<?php if ( isset($popup_color) && $popup_color != '' ) { ?>
+if ( isset($popup_color) && $popup_color != '' ) { ?>
 	div.popup-inner {
 		color: #<?php echo $popup_color; ?>;
 	}
-<?php } ?>
+<?php }
 
-<?php if ( $popup_width && $popup_width != '' ) {
+if ( $popup_width && $popup_width != '' ) {
 	$wrapper_width = $popup_width + 36;
 	$wrapper_margin_left = $wrapper_width / 2;
 	?>
@@ -23,9 +23,9 @@
 	div.popup-inner {
 		width: <?php echo $popup_width; ?>px;
 	}
-<?php } ?>
+<?php }
 
-<?php if ( $popup_height && $popup_height != '' ) {
+if ( $popup_height && $popup_height != '' ) {
 	$wrapper_height = $popup_height + 36;
 	$wrapper_margin_top = $wrapper_height / 2;
 	?>
@@ -36,7 +36,11 @@
 	div.popup-inner {
 		height: <?php echo $popup_height; ?>px;
 	}
-<?php } ?>
+<?php }
 
-	
+if ( isset($popup_padding) && $popup_padding != '' ) { ?>
+	div.popup-inner {
+		padding: <?php echo $popup_padding; ?>px;
+	}
+<?php } ?>
 </style>

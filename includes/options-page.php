@@ -51,6 +51,16 @@
 										<td>#<input name="popup_color" id="popup_color" type="text" value="<?php echo $popup_color; ?>" class="regular-text" /></td>
 										<td>Default: #000000 (black)</td>
 									</tr>
+									<tr>
+										<td><label for="popup_width">Popup width:</label></td>
+										<td><input name="popup_width" id="popup_width" type="text" value="<?php echo $popup_width; ?>" class="regular-text" />px</td>
+										<td>Default: 750px</td>
+									</tr>
+									<tr>
+										<td><label for="popup_height">Popup height:</label></td>
+										<td><input name="popup_height" id="popup_height" type="text" value="<?php echo $popup_height; ?>" class="regular-text" />px</td>
+										<td>Default: 300px</td>
+									</tr>
 								</table>
 								<p><input class="button-primary" type="submit" name="Submit" value="Submit" /></p>
 							</form>

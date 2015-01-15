@@ -30,7 +30,13 @@ if( is_admin() ) {
 				$popup_options['popup_mobile']	= intval(esc_html($_POST['popup_mobile']));
 			}
 			$popup_options['popup_background']  = esc_html($_POST['popup_background']);
-			$popup_options['popup_color'] 		= esc_html($_POST['popup_color']);                    
+			$popup_options['popup_color'] 		= esc_html($_POST['popup_color']);
+			if ( $_POST['popup_width'] != '') {
+				$popup_options['popup_width'] 	= intval(esc_html($_POST['popup_width']));
+			} else $popup_options['popup_width'] = '';
+			if ( $_POST['popup_height'] != '') {
+				$popup_options['popup_height'] 	= intval(esc_html($_POST['popup_height']));       
+			} else $popup_options['popup_height'] = '';
             if( $_POST['popup_delay'] && $_POST['popup_delay'] != '' ) { 
                 $popup_options['popup_delay']   = intval(esc_html($_POST['popup_delay']));
             }
@@ -45,9 +51,11 @@ if( is_admin() ) {
 		if( $popup_options != '' ) {
 			$popup_ID		  = $popup_options['popup_ID'];
 			$popup_mobile	  = $popup_options['popup_mobile'];
+			$popup_delay      = $popup_options['popup_delay'];
 			$popup_background = $popup_options['popup_background'];
 			$popup_color	  = $popup_options['popup_color'];
-            $popup_delay      = $popup_options['popup_delay'];
+            $popup_width	  = $popup_options['popup_width'];
+			$popup_height	  = $popup_options['popup_height'];
 		}
 		
 		if($popup_mobile) {

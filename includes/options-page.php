@@ -31,6 +31,11 @@
 											</select>
 										</td>
 									</tr>
+									<tr>
+										<td><label for="popup_mobile">Display on mobile?</label></td>
+										<td><input type="radio" name="popup_mobile" id="popup_mobile" value="1" <?php echo $mobile_yes; ?>>Yes &nbsp;&nbsp;<input type="radio" name="popup_mobile" id="popup_mobile" value="0" <?php echo $mobile_no; ?>>No</td>
+										<td>Default: No</td>
+									</tr>
                                     <tr>
 										<td><label for="popup_delay">Hide popup for:</label></td>
 										<td><input name="popup_delay" id="popup_delay" type="text" value="<?php echo $popup_delay; ?>" class="regular-text" /> days</td>

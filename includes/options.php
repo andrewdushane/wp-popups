@@ -25,6 +25,10 @@ if( is_admin() ) {
 		 */
 		if( $_POST['premier_popups_options_submitted'] ) {
 			$popup_options['popup_ID']			= esc_html($_POST['select_popup']);
+			$popup_options['popup_mobile']		= 0; //Do not display on mobile by default
+			if(isset($_POST['popup_mobile'])) {
+				$popup_options['popup_mobile']	= intval(esc_html($_POST['popup_mobile']));
+			}
 			$popup_options['popup_background']  = esc_html($_POST['popup_background']);
 			$popup_options['popup_color'] 		= esc_html($_POST['popup_color']);                    
             if( $_POST['popup_delay'] && $_POST['popup_delay'] != '' ) { 
@@ -40,9 +44,18 @@ if( is_admin() ) {
 		global $popup_ID;
 		if( $popup_options != '' ) {
 			$popup_ID		  = $popup_options['popup_ID'];
+			$popup_mobile	  = $popup_options['popup_mobile'];
 			$popup_background = $popup_options['popup_background'];
 			$popup_color	  = $popup_options['popup_color'];
             $popup_delay      = $popup_options['popup_delay'];
+		}
+		
+		if($popup_mobile) {
+			$mobile_yes = 'checked="checked"';
+			$mobile_no = '';
+		} else {
+			$mobile_no = 'checked="checked"';
+			$mobile_yes = '';
 		}
 		
 		/**

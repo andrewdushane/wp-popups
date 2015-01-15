@@ -1,6 +1,6 @@
 <?php 
 if( $popup_ID && $popup_ID != '') { ?>
-	<div class="mobile-hide">
+	<div <?php echo $popup_hide; ?>>
 		<div class="popup-outer">
 			<div class="popup-wrapper">
 				<div class="popup-close" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;">X</div>

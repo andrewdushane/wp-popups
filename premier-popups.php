@@ -20,6 +20,13 @@ function premier_popup_content() {
 		$popup_ID		  = $popups_options['popup_ID'];
 		$popup_background = $popups_options['popup_background'];
 		$popup_color	  = $popups_options['popup_color'];
+		$popup_mobile     = $popups_options['popup_mobile'];
+		if ($popup_mobile) {
+			$popup_hide = '';
+		} else {
+			$popup_hide='class="mobile-hide"';
+		}
+		
 	}
 	include_once( 'includes/custom-styles.php' );
 	include_once( 'includes/display-popup.php');
